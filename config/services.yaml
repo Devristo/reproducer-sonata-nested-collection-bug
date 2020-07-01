@@ -25,3 +25,18 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Admin\PageAdmin:
+        arguments: [~, App\Entity\Page, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: 'Page'}
+
+    App\Admin\ChapterAdmin:
+        arguments: [~, App\Entity\Chapter, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: 'Chapter'}
+
+    App\Admin\BookAdmin:
+        arguments: [~, App\Entity\Book, ~]
+        tags:
+            - {name: sonata.admin, manager_type: orm, label: 'Book'}
